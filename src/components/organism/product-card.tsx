@@ -42,7 +42,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const quantity = productInCart(product)?.quantity ?? 0
 
   return (
-    <Card className="p-0 gap-2 shadow-none border-none py-2 cursor-pointer hover:shadow-md transition-all">
+    <Card className="p-0 gap-2 shadow-none border-none py-2 hover:shadow-md transition-all">
       <CardHeader className="px-0 bg-warning-foreground rounded-t-xl relative">
         {product.badge && (
           <Badge productBadge={PRODUCT_BADGES[product.badge]} />
