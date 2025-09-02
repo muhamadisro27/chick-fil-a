@@ -10,7 +10,7 @@ type ProductListProps = {
 
 const ProductList = ({ products }: ProductListProps) => {
   return (
-    <Box className="grid grid-cols-3 gap-6 pt-3">
+    <Box className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-3">
       {products.map((product) => (
         <ProductCard product={product} key={product.id} />
       ))}

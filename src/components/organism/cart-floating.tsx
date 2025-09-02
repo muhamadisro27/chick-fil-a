@@ -3,8 +3,8 @@ import Box from "@/components/atoms/box"
 import { useCart } from "@/hooks/use-cart"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { ScrollArea } from "../ui/scroll-area"
-import Typography from "../atoms/typography"
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area"
+import Typography from "@/components/atoms/typography"
 import Image from "next/image"
 import { Minus, Plus, X } from "lucide-react"
 import { usePathname, useRouter } from "next/navigation"
@@ -76,8 +76,8 @@ const CartFloating = () => {
               </Typography>
             </Box>
           </Box>
-          <Box className="flex border-t-2 justify-between py-4 px-6">
-            <Typography as="h5" className="font-medium text-xl">
+          <Box className="flex border-t-2 justify-between items-end py-4 px-6">
+            <Typography as="h5" className="font-medium text-base md:text-xl">
               Total payment
             </Typography>
             <Typography as="h6" className="font-semibold text-xl text-primary">
@@ -86,9 +86,9 @@ const CartFloating = () => {
           </Box>
         </Box>
       ) : (
-        <ScrollArea className="w-full whitespace-nowrap">
+        <ScrollArea className="w-full">
           {count > 0 && (
-            <Box className="bg-secondary/15 p-3 flex gap-3 w-full overflow-x-auto">
+            <Box className="bg-secondary/15 p-3 flex gap-3 w-max">
               {products.map((product) => (
                 <Card
                   key={product.id}
@@ -187,10 +187,11 @@ const CartFloating = () => {
               ))}
             </Box>
           )}
+          <ScrollBar orientation="horizontal" className="mt-2 bg-secondary/30" />
         </ScrollArea>
       )}
 
-      <Box className="flex justify-between border-t h-full py-6">
+      <Box className="flex flex-col md:flex-row justify-between border-t h-full py-6">
         <Box className="flex space-x-4 ">
           <Button
             onClick={resetCart}

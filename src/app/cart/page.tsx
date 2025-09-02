@@ -28,11 +28,14 @@ const Page = () => {
         </Box>
       </Link>
 
-      <Box className="flex pt-4 space-x-4 items-center">
-        <Badge className="rounded-lg text-base font-normal py-1.5">
+      <Box className="flex pt-4 space-x-4 items-center justify-center md:justify-start px-6 lg:px-0">
+        <Badge className="rounded-lg text-sm md:text-base font-normal py-1.5">
           {count} items
         </Badge>
-        <Typography as="h3" className="font-semibold text-4xl">
+        <Typography
+          as="h3"
+          className="font-semibold text-2xl md:text-3xl lg:text-4xl"
+        >
           Your Order
         </Typography>
       </Box>

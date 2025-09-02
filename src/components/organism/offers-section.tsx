@@ -30,7 +30,7 @@ const OffersSection = ({
 
       <Box className="grid gap-6 pt-4">
         {(showOnly === "1" || showOnly === "all") && (
-          <Box className="grid grid-cols-2 gap-6">
+          <Box className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {OFFER_ITEMS.slice(0, 2).map((item, index) => (
               <GradientCard
                 key={index}

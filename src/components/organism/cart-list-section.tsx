@@ -31,7 +31,7 @@ const CartListSection = () => {
   }
 
   return (
-    <Box className="mt-8 border-t">
+    <Box className="mt-4 md:mt-8 border-t">
       <ScrollArea className="h-full w-full p-4 py-4">
         {renderProducts(products)}
       </ScrollArea>

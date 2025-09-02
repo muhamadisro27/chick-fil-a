@@ -24,7 +24,7 @@ const ProductCartCard = ({ product }: ProductCartCardProps) => {
   return (
     <Card className="shadow-none p-2 py-4">
       <CardHeader className="px-2">
-        <Box className="flex space-x-2 pl-1 items-center w-max">
+        <Box className="flex flex-col md:flex-row space-x-2 pl-1 items-start md:items-center w-max">
           <Box
             as="figure"
             className="w-[100px] h-[100px] rounded-xl bg-gradient-to-b from-[#FFCB63] to-[#FCF7EF] m-auto items-center relative"
@@ -39,17 +39,17 @@ const ProductCartCard = ({ product }: ProductCartCardProps) => {
             />
           </Box>
           <Box>
-            <Typography as="h5" className="text-base font-medium">
+            <Typography as="h5" className="text-sm md:text-base font-medium">
               {product.title}
             </Typography>
-            <Typography as="h6" className="text-secondary text-base">
+            <Typography as="h6" className="text-secondary text-sm md:text-base">
               {product.description}
             </Typography>
           </Box>
         </Box>
         <CardContent className="px-2 pt-2">
-          <Box className="flex justify-between items-end">
-            <Box className="flex space-x-7">
+          <Box className="flex md:flex-row flex-col justify-between space-y-2 md:space-y-0 items-start md:items-end">
+            <Box className="flex flex-col justify-start md:flex-row space-y-2 md:space-y-0 space-x-7">
               <Box className="flex items-center space-x-2">
                 <Button
                   className="cursor-pointer"
@@ -80,7 +80,8 @@ const ProductCartCard = ({ product }: ProductCartCardProps) => {
                   </Typography>
                 </Button>
               </Box>
-              <Box className="flex items-center space-x-3">
+              
+              <Box className="flex flex-col items-start md:space-y-0 md:items-end space-y-2 md:flex-row space-x-3">
                 <Button variant={"outline"} className="cursor-pointer" asChild>
                   <Typography
                     as="span"
