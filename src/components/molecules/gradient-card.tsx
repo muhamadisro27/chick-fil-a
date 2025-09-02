@@ -18,6 +18,7 @@ type GradientCardProps = {
   minHeight: string
   cardTitle: string
   cardSubtitle: string
+  maxWidthSubtitle?: string
 } & ComponentProps<typeof Card>
 
 const GradientCard: FC<GradientCardProps> = ({
@@ -31,6 +32,7 @@ const GradientCard: FC<GradientCardProps> = ({
   minHeight = "min-h-[480px]",
   cardTitle,
   cardSubtitle,
+  maxWidthSubtitle = '',
   ...props
 }) => {
   const gradientScaleClass =
@@ -63,7 +65,7 @@ const GradientCard: FC<GradientCardProps> = ({
           <Typography className="font-normal text-white text-base" as="h5">
             {cardTitle}
           </Typography>
-          <Typography className="text-white font-semibold text-2xl" as="h6">
+          <Typography className={clsx('text-white font-semibold text-2xl', maxWidthSubtitle)} as="h6">
             {cardSubtitle}
           </Typography>
           <Button

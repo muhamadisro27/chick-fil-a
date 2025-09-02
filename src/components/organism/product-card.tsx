@@ -1,14 +1,18 @@
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
+"use client"
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import Box from "@/components/atoms/box"
 import Image from "next/image"
 import { Product, ProductBadge, ProductBadgeMap } from "@/types/product"
 import Typography from "../atoms/typography"
 import { formattedNumber } from "@/utils/strings"
 import { PRODUCT_BADGES } from "@/utils/constant"
+import { Button } from "../ui/button"
+import { ShoppingCart } from "lucide-react"
+import { useCart } from "@/hooks/use-cart"
+import ProductQuantity from "./product-quantity"
 
 type ProductCardProps = {
   product: Product
-  onClick: (product: Product) => void
 }
 
 const Badge = ({
@@ -32,16 +36,20 @@ const Badge = ({
   )
 }
 
-const ProductCard = ({ product, onClick }: ProductCardProps) => {
+const ProductCard = ({ product }: ProductCardProps) => {
+  const { productInCart, addNewProduct } = useCart()
+
+  const quantity = productInCart(product)?.quantity ?? 0
+
   return (
-    <Card
-      onClick={() => onClick(product)}
-      className="p-0 gap-2 rounded-b-none shadow-none border-none py-2 cursor-pointer"
-    >
+    <Card className="p-0 gap-2 shadow-none border-none py-2 cursor-pointer hover:shadow-md transition-all">
       <CardHeader className="px-0 bg-warning-foreground rounded-t-xl relative">
         {product.badge && (
           <Badge productBadge={PRODUCT_BADGES[product.badge]} />
         )}
+
+        {quantity > 0 && <ProductQuantity quantity={quantity} />}
+
         <Box
           as="figure"
           className="w-[200px] h-[200px] m-auto items-center relative"
@@ -70,6 +78,15 @@ const ProductCard = ({ product, onClick }: ProductCardProps) => {
           {formattedNumber(product.calorie, "Cal")}
         </Typography>
       </CardContent>
+      <CardFooter className="px-2 py-1">
+        <Button
+          className="w-full cursor-pointer"
+          onClick={() => addNewProduct(product)}
+        >
+          Add to cart
+          <ShoppingCart />
+        </Button>
+      </CardFooter>
     </Card>
   )
 }

@@ -14,7 +14,7 @@ const Header: FC<HeaderProps> = ({
   descriptionText = "",
 }) => {
   return (
-    <Box as="header">
+    <Box as="header" className="flex flex-col space-y-2">
       <Typography
         as="h2"
         className="font-semibold max-w-[500px] text-2xl md:text-3xl xl:text-6xl break-words whitespace-normal"
@@ -22,7 +22,7 @@ const Header: FC<HeaderProps> = ({
         {titleText}
       </Typography>
       {hasDescription && (
-        <Typography className="break-words whitespace-normal">
+        <Typography className="break-words whitespace-normal text-secondary font-normal">
           {descriptionText}
         </Typography>
       )}

@@ -1,6 +1,7 @@
 export interface Product {
   id: string
   title: string
+  description: string | null
   price: number
   calorie: number
   image: string
@@ -16,4 +17,9 @@ export type ProductBadgeMap = {
     width: number
     height: number
   }
+}
+
+export interface ProductCart
+  extends Pick<Product, "id" | "image" | "title" | "description" | "price"> {
+  quantity: number
 }

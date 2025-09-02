@@ -12,11 +12,7 @@ const ProductList = ({ products }: ProductListProps) => {
   return (
     <Box className="grid grid-cols-3 gap-6 pt-3">
       {products.map((product) => (
-        <ProductCard
-          product={product}
-          key={product.id}
-          onClick={(product) => console.log("test", product)}
-        />
+        <ProductCard product={product} key={product.id} />
       ))}
     </Box>
   )

@@ -1,9 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { Sidebar } from "@/components/organism/sidebar"
-import { SidebarProvider } from "@/components/ui/sidebar"
-import MainLayout from "@/components/templates/main-layout"
+import ClientLayoutWrapper from "@/components/templates/client-layout-wrapper"
 
 const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -23,10 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
-        <SidebarProvider>
-          <Sidebar />
-          <MainLayout>{children}</MainLayout>
-        </SidebarProvider>
+        <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
       </body>
     </html>
   )

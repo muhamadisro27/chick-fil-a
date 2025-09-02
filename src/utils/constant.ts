@@ -114,6 +114,7 @@ export const RECOMMENDATION_PRODUCTS: Product[] = [
   {
     id: "2c7f7b84-3c38-4e20-94f0-72c5c8a48a1f",
     title: "Chicken Sandwich",
+    description: null,
     price: 39000,
     calorie: 370,
     badge: "hot",
@@ -122,6 +123,7 @@ export const RECOMMENDATION_PRODUCTS: Product[] = [
   {
     id: "5c4cce77-bd73-482a-9870-0a8d537ffcb0",
     title: "Deluxe Sandwich",
+    description: null,
     price: 54000,
     calorie: 410,
     badge: "best-seller",
@@ -130,6 +132,7 @@ export const RECOMMENDATION_PRODUCTS: Product[] = [
   {
     id: "7db5f285-8b8c-49b0-9a36-444f6e6c81f1",
     title: "Grilled Chicken Club Sandwich",
+    description: null,
     price: 67000,
     calorie: 490,
     badge: null,
@@ -157,3 +160,60 @@ export const PRODUCT_BADGES: ProductBadgeMap = {
     height: 44,
   },
 }
+
+export const PRODUCTS: Product[] = [
+  {
+    id: "2c7f7b84-3c38-4e20-94f0-72c5c8a48a1f",
+    title: "Chicken Sandwich",
+    description: "Nashville Crispy Fillet, Bacon Strips",
+    price: 39000,
+    calorie: 370,
+    badge: "best-seller",
+    image: "chicken-sandwich.png",
+  },
+  {
+    id: "5c4cce77-bd73-482a-9870-0a8d537ffcb0",
+    title: "Deluxe Sandwich",
+    description: "Toasted Bun, Extra Beef Patty",
+    price: 54000,
+    calorie: 410,
+    badge: "better-value",
+    image: "deluxe-sandwich.png",
+  },
+  {
+    id: "7db5f285-8b8c-49b0-9a36-44f6e6c81f1",
+    title: "Grilled Chicken Club Sandwich",
+    description: "Crispy Chicken",
+    price: 67000,
+    calorie: 490,
+    badge: null,
+    image: "grilled-chicken-club-sandwich.png",
+  },
+  {
+    id: "7db5f285-8b8c-49b0-9a36-444f26c81f1",
+    title: "Nuggets",
+    description: null,
+    price: 67000,
+    calorie: 250,
+    badge: null,
+    image: "grilled-chicken-club-sandwich.png",
+  },
+  {
+    id: "7db5f285-8b8c-49b0-9a36-441f6e6c81f1",
+    title: "Grilled Nuggets",
+    description: null,
+    price: 67000,
+    calorie: 490,
+    badge: null,
+    image: "grilled-chicken-club-sandwich.png",
+  },
+  {
+    id: "7db5f285-8b8c-49b0-9a36-441f626c81f1",
+    title: "Spicy Chicken Sandwich",
+    description: null,
+    price: 67000,
+    calorie: 490,
+    badge: null,
+    image: "chicken-sandwich.png",
+  },
+]
