@@ -12,12 +12,14 @@ import { toast } from "sonner"
 import { useEffect } from "react"
 import ProductQuantity from "./product-quantity"
 import { formattedNumber } from "@/utils/strings"
+import { cn } from "@/lib/utils"
 
 const CartFloating = () => {
   const {
     count,
     products,
     totalPrice,
+    countProductsTotal,
     getTotalPriceForProduct,
     resetCart,
     findProductInCart,
@@ -88,7 +90,12 @@ const CartFloating = () => {
       ) : (
         <ScrollArea className="w-full">
           {count > 0 && (
-            <Box className="bg-secondary/15 p-3 flex gap-3 w-max">
+            <Box
+              className={cn(
+                "bg-secondary/15 p-3 flex gap-3",
+                countProductsTotal > 2 ? "w-max" : "w-full"
+              )}
+            >
               {products.map((product) => (
                 <Card
                   key={product.id}
@@ -187,7 +194,10 @@ const CartFloating = () => {
               ))}
             </Box>
           )}
-          <ScrollBar orientation="horizontal" className="mt-2 bg-secondary/30" />
+          <ScrollBar
+            orientation="horizontal"
+            className="mt-2 bg-secondary/30"
+          />
         </ScrollArea>
       )}
 

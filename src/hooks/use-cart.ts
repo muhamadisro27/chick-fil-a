@@ -15,6 +15,10 @@ export const useCart = () => {
     removeProduct,
   } = useCartStore()
 
+  const countProductsTotal = useMemo(() => {
+    return products.length
+  }, [products])
+
   const findProductInCart = (id: string) =>
     products.find((productCart) => id === productCart.id)
 
@@ -67,6 +71,7 @@ export const useCart = () => {
 
   return {
     count,
+    countProductsTotal,
     products,
     totalPrice,
     getTotalPriceForProduct,

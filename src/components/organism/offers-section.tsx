@@ -69,7 +69,7 @@ const OffersSection = ({
         )}
 
         {showOthers && (
-          <Box className="grid grid-cols-3 gap-4">
+          <Box className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {OTHER_ITEMS.map((item) => (
               <OtherCard item={item} key={item.title} />
             ))}
