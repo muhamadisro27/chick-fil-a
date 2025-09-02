@@ -14,6 +14,7 @@ type GradientCardProps = {
   toColor: string
   scale: Scale
   cardBg: string
+  position: string
   minHeight: string
   cardTitle: string
   cardSubtitle: string
@@ -25,6 +26,7 @@ const GradientCard: FC<GradientCardProps> = ({
   toColor = "#7E2200 70.67%",
   scale = "horizontal" as Scale,
   cardBg,
+  position = 'top -59px right -71px',
   className,
   minHeight = "min-h-[480px]",
   cardTitle,
@@ -38,9 +40,10 @@ const GradientCard: FC<GradientCardProps> = ({
     <Card
       style={{
         backgroundImage: `url('/images/offers/${cardBg}')`,
+        backgroundPosition : position
       }}
       className={clsx(
-        "relative bg-no-repeat bg-position-[top_center_60] bg-cover border-none",
+        "relative bg-no-repeat bg-cover border-none",
         className,
         minHeight
       )}
